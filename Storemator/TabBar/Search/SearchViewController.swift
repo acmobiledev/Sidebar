@@ -1,20 +1,18 @@
 //
-//  ViewController.swift
+//  SearchViewController.swift
 //  Storemator
 //
 //  Created by Amit Chaudhary on 12/24/20.
 //  Copyright © 2020 Amit Chaudhary. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-
+class SearchViewController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = .systemYellow
     }
-
-
 }
-
