@@ -13,7 +13,6 @@ class MainTabViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .clear
-        self.navigationController?.navigationBar.isHidden = true
         self.constructTabBarViewControllers()
     }
     

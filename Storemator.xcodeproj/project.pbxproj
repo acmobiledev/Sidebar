@@ -25,6 +25,7 @@
 		DA692B1D25949F2C0069CA8B /* TodayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA692B1C25949F2C0069CA8B /* TodayDetailView.swift */; };
 		DA692B1F2594A2DB0069CA8B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA692B1E2594A2DB0069CA8B /* String.swift */; };
 		DA692B212594A76D0069CA8B /* TodayAnimationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA692B202594A76D0069CA8B /* TodayAnimationTransition.swift */; };
+		DACE119C259504F60066ADB4 /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACE119B259504F60066ADB4 /* TodayDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		DA692B1C25949F2C0069CA8B /* TodayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailView.swift; sourceTree = "<group>"; };
 		DA692B1E2594A2DB0069CA8B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		DA692B202594A76D0069CA8B /* TodayAnimationTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAnimationTransition.swift; sourceTree = "<group>"; };
+		DACE119B259504F60066ADB4 /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				DA692B0225944BA30069CA8B /* TodayViewController.swift */,
+				DACE119B259504F60066ADB4 /* TodayDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				DA692B00259449E80069CA8B /* MainTabViewController.swift in Sources */,
 				DA692B1D25949F2C0069CA8B /* TodayDetailView.swift in Sources */,
 				DA692B18259493590069CA8B /* TodayHeaderView.swift in Sources */,
+				DACE119C259504F60066ADB4 /* TodayDetailViewController.swift in Sources */,
 				DA692B0625944C0B0069CA8B /* GamesViewController.swift in Sources */,
 				DA692B0925944C3E0069CA8B /* UpdatesViewController.swift in Sources */,
 			);

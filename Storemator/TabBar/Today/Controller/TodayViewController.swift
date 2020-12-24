@@ -34,6 +34,7 @@ class TodayViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         self.tableView.tableHeaderView = headerView
         self.tableView.register(TodayViewCell.self, forCellReuseIdentifier: reUseIdentifier)
         self.tableView.separatorStyle = .none
@@ -91,6 +92,9 @@ extension TodayViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Bring DetailVC")
+        let todayDetailVC = TodayDetailViewController()
+        todayDetailVC.selectedCell = (self.tableView.cellForRow(at: indexPath) as! TodayViewCell)
+        todayDetailVC.modalPresentationStyle = .fullScreen
+        self.present(todayDetailVC, animated: true, completion: nil)
     }
 }
