@@ -27,7 +27,7 @@ class GamePopularTableViewCell: UITableViewCell {
         layout.minimumInteritemSpacing = 1
         layout.itemSize = CGSize(width: getCurrentWindow().bounds.size.width - 40, height: 80)
         
-        let frame = CGRect(x: 0, y: 0, width: getCurrentWindow().bounds.size.width, height: 240)
+        let frame = CGRect(x: 0, y: 42, width: getCurrentWindow().bounds.size.width, height: 240)
         let popularCV = GamePopularCollectionView(frame: frame, collectionViewLayout: GameCollectionViewFlowLayout())
         popularCV.delegate = self
         popularCV.dataSource = self
