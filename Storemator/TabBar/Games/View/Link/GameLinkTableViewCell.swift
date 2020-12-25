@@ -46,8 +46,8 @@ class GameLinkTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.addSubview(cellHeaderView)
-        self.addSubview(cellTableView)
+        contentView.addSubview(cellHeaderView)
+        contentView.addSubview(cellTableView)
     }
 }
 
