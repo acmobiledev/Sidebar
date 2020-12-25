@@ -45,8 +45,8 @@ class GamePopularTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.addSubview(popularCellHeaderView)
-        self.addSubview(popularCollectionView)
+        contentView.addSubview(popularCellHeaderView)
+        contentView.addSubview(popularCollectionView)
     }
     
 }
