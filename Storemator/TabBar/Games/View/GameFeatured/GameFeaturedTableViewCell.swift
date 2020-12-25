@@ -62,6 +62,7 @@ extension GameFeaturedTableViewCell: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == gameFeaturedCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reUseCollectionIdentifier, for: indexPath) as! GameFeaturedCollectionViewCell
+            cell.featuredGame = self.featuredGames[indexPath.item]
             return cell
         } else {
             return UICollectionViewCell()

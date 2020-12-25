@@ -64,6 +64,7 @@ class GameFeaturedCollectionViewCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         self.addSubview(topView)
         topView.anchorView(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: self.bounds.size.width, height: 0.6)
         
