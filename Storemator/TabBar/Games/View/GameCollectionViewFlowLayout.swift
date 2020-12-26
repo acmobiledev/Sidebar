@@ -12,6 +12,11 @@ class GameCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     override init() {
         super.init()
+        self.minimumLineSpacing = 10
+        self.minimumInteritemSpacing = 1
+       // self.itemSize = CGSize(width: getCurrentWindow().bounds.size.width - 40, height: 300)
+        self.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        self.scrollDirection = .horizontal
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,4 +44,5 @@ class GameCollectionViewFlowLayout: UICollectionViewFlowLayout {
         
         return CGPoint(x: newHorizontalOffset, y: proposedContentOffset.y)
     }
+    
 }

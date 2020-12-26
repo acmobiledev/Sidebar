@@ -88,7 +88,7 @@ class GamePopularCollectionViewCell: UICollectionViewCell {
         getButton.layer.cornerRadius = 15
         
         self.addSubview(bottomView)
-        bottomView.anchorView(top: nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: self.bounds.width, height: 0.8)
+        bottomView.anchorView(top: nil, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: self.bounds.width - 40, height: 0.4)
     }
     
 }

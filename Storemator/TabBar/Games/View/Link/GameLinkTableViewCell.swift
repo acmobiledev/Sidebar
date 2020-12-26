@@ -17,18 +17,18 @@ fileprivate let linkDataSource: [String] = [
     "New to the App Store",
 ]
 
-fileprivate let reUseCellIdentifier = "GameLinkCell"
+ let reUseCellILinkdentifier = "GameLinkCell"
 
 class GameLinkTableViewCell: UITableViewCell {
 
     let cellHeaderView: GameLinksHeaderView = {
-        let frame = CGRect(x: 0, y: 0, width: getCurrentWindow().bounds.size.width, height: 42)
+        let frame = CGRect.zero
         let cHV = GameLinksHeaderView(frame: frame)
         return cHV
     }()
     
     lazy var cellTableView: GameLinkTableView = {
-        let frame = CGRect(x: 0, y: 42, width: getCurrentWindow().bounds.size.width, height: 270)
+        let frame = CGRect.zero
         let cTV = GameLinkTableView(frame: frame)
         cTV.delegate = self
         cTV.dataSource = self
@@ -47,8 +47,13 @@ class GameLinkTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.addSubview(cellHeaderView)
+        cellHeaderView.anchorView(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: getCurrentWindow().bounds.size.width, height: 42)
+        
         contentView.addSubview(cellTableView)
+        cellTableView.anchorView(top: self.cellHeaderView.bottomAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: getCurrentWindow().bounds.size.width, height: 270)
     }
+    
+    
 }
 
 
@@ -64,7 +69,7 @@ extension GameLinkTableViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == self.cellTableView {
-            let cell = tableView.dequeueReusableCell(withIdentifier: reUseCellIdentifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: reUseCellILinkdentifier, for: indexPath)
             cell.textLabel?.text = linkDataSource[indexPath.row]
             cell.textLabel?.textColor = .systemBlue
             return cell

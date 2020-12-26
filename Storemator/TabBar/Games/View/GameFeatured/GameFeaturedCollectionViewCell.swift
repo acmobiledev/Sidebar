@@ -18,7 +18,7 @@ class GameFeaturedCollectionViewCell: UICollectionViewCell {
     
     let featuredLabel: UILabel = {
         let aLabel = UILabel()
-        aLabel.font = .monospacedSystemFont(ofSize: 11, weight: UIFont.Weight.medium)
+        aLabel.font = .monospacedSystemFont(ofSize: 12, weight: UIFont.Weight.medium)
         aLabel.textColor = .systemBlue
         return aLabel
     }()
@@ -32,8 +32,8 @@ class GameFeaturedCollectionViewCell: UICollectionViewCell {
     
     let categoryLabel: UILabel = {
         let aLabel = UILabel()
-        aLabel.font = .monospacedSystemFont(ofSize: 20, weight: UIFont.Weight.regular)
-        aLabel.textColor = .lightText
+        aLabel.font = .monospacedSystemFont(ofSize: 18, weight: UIFont.Weight.regular)
+        aLabel.textColor = .lightGray
         return aLabel
     }()
     
@@ -65,22 +65,23 @@ class GameFeaturedCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        print("BBBBBBBBBBBBB-----\(self.bounds.size.height)")
         self.addSubview(topView)
-        topView.anchorView(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: self.bounds.size.width, height: 0.6)
+        topView.anchorView(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: self.bounds.size.width - 60, height: 0.4)
         
         self.addSubview(featuredLabel)
-        featuredLabel.anchorView(top: self.topView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, topPadding: 12, leftPadding: 20, bottomPadding: 0, rightPadding: 0, width: 0, height: 0)
+        featuredLabel.anchorView(top: self.topView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, topPadding: 5, leftPadding: 20, bottomPadding: 0, rightPadding: 0, width: 0, height: 0)
         
         self.addSubview(nameLabel)
-        nameLabel.anchorView(top: self.featuredLabel.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, topPadding: 15, leftPadding: 20, bottomPadding: 0, rightPadding: 0, width: 0, height: 0)
+        nameLabel.anchorView(top: self.featuredLabel.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, topPadding: 4, leftPadding: 20, bottomPadding: 0, rightPadding: 0, width: 0, height: 0)
         
         self.addSubview(categoryLabel)
-        categoryLabel.anchorView(top: self.nameLabel.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, topPadding: 15, leftPadding: 20, bottomPadding: 0, rightPadding: 0, width: 0, height: 0)
+        categoryLabel.anchorView(top: self.nameLabel.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, topPadding: 3, leftPadding: 20, bottomPadding: 0, rightPadding: 0, width: 0, height: 0)
         
         self.addSubview(coverImageView)
-        coverImageView.anchorView(top: self.categoryLabel.bottomAnchor, left: nil, bottom: nil, right: nil, topPadding: 14, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: self.bounds.size.width - 60, height: 160)
-        coverImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        coverImageView.layer.cornerRadius = 18
+        coverImageView.anchorView(top: self.categoryLabel.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, topPadding: 5, leftPadding: 2, bottomPadding: 0, rightPadding: 0, width: self.bounds.size.width - 20, height: 200)
+        //coverImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        coverImageView.layer.cornerRadius = 15
         
     }
     

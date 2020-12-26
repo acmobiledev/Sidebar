@@ -10,25 +10,23 @@ import UIKit
 
 fileprivate let popularGames: [GamePopular] = [GamePopular(appName: "Bullet Hell", categoryName: "Casual", iconImageName: "logo_broadcast"), GamePopular(appName: "Hot Wheels", categoryName: "Strategy", iconImageName: "logo_car"), GamePopular(appName: "SpellForce - Heroes", categoryName: "Card", iconImageName: "logo_jump"), GamePopular(appName: "Farm Punks", categoryName: "Role-Playing", iconImageName: "logo_smile"), GamePopular(appName: "Super Spinball", categoryName: "A musical journey awaits", iconImageName: "logo_weibo")]
 
-fileprivate let reUseCellIdentifier = "GamePopularCVCell"
+ let reUseCellPopularIdentifier = "GamePopularCVCell"
 
 
 class GamePopularTableViewCell: UITableViewCell {
     
     let popularCellHeaderView: GamePopularHeaderView = {
-        let headerView = GamePopularHeaderView(frame: CGRect(x: 0, y: 0, width: getCurrentWindow().bounds.size.width, height: 42))
+        let headerView = GamePopularHeaderView(frame: .zero)
         return headerView
     }()
     
     lazy var popularCollectionView: GamePopularCollectionView = {
-        let layout = GameCollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 1
-        layout.itemSize = CGSize(width: getCurrentWindow().bounds.size.width - 40, height: 80)
+        let flowLayout = GameCollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.itemSize = CGSize(width: getCurrentWindow().bounds.size.width - 20, height: 78)
         
-        let frame = CGRect(x: 0, y: 42, width: getCurrentWindow().bounds.size.width, height: 240)
-        let popularCV = GamePopularCollectionView(frame: frame, collectionViewLayout: GameCollectionViewFlowLayout())
+        let frame = CGRect.zero 
+        let popularCV = GamePopularCollectionView(frame: frame, collectionViewLayout: flowLayout)
         popularCV.delegate = self
         popularCV.dataSource = self
         return popularCV
@@ -44,9 +42,11 @@ class GamePopularTableViewCell: UITableViewCell {
     }
     
     override func layoutSubviews() {
-        super.layoutSubviews()
         contentView.addSubview(popularCellHeaderView)
+        popularCellHeaderView.anchorView(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: getCurrentWindow().bounds.size.width, height: 42)
+        
         contentView.addSubview(popularCollectionView)
+        popularCollectionView.anchorView(top: self.popularCellHeaderView.bottomAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: getCurrentWindow().bounds.size.width, height: 240)
     }
     
 }
@@ -64,7 +64,7 @@ extension GamePopularTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.popularCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reUseCellIdentifier, for: indexPath) as! GamePopularCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reUseCellPopularIdentifier, for: indexPath) as! GamePopularCollectionViewCell
             cell.bottomView.isHidden = ((indexPath.row + 1) % 3 == 0) || (indexPath.row == popularGames.count - 1)
             cell.gamePopular = popularGames[indexPath.row]
             return cell
@@ -77,6 +77,4 @@ extension GamePopularTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("AAAAAAAA")
     }
-    
-    
 }

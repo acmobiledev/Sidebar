@@ -8,13 +8,11 @@
 
 import UIKit
 
-fileprivate let reUseCellIdentifier = "GameLinkCell"
-
 class GameLinkTableView: UITableView {
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
-        self.register(UITableViewCell.self, forCellReuseIdentifier: reUseCellIdentifier)
+        self.register(UITableViewCell.self, forCellReuseIdentifier: reUseCellILinkdentifier)
         self.rowHeight = 45
         self.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }

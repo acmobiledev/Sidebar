@@ -8,15 +8,13 @@
 
 import UIKit
 
-fileprivate let reUseCellIdentifier = "GameFeaturedCollectionCell"
-
 class GameFeaturedCollectionView: UICollectionView {
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         
         self.backgroundColor = .white
-        self.register(GameFeaturedCollectionViewCell.self, forCellWithReuseIdentifier: reUseCellIdentifier)
+        self.register(GameFeaturedCollectionViewCell.self, forCellWithReuseIdentifier: reUseCellFeaturedIdentifier)
         self.decelerationRate = UIScrollView.DecelerationRate.fast
         self.showsHorizontalScrollIndicator = false
     }
