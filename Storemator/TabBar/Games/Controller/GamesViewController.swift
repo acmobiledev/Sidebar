@@ -120,3 +120,11 @@ extension GamesViewController {
             navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
 }
+
+
+//MARK: - Helper Method
+extension GamesViewController {
+    @objc func presentUserTableViewController() {
+        print("User Pofile")
+    }
+}

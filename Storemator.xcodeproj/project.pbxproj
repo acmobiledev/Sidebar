@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA12331A25973EB600C5933E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12331925973EB600C5933E /* UIViewController.swift */; };
 		DA692AEB259449780069CA8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA692AEA259449780069CA8B /* AppDelegate.swift */; };
 		DA692AED259449780069CA8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA692AEC259449780069CA8B /* SceneDelegate.swift */; };
 		DA692AF2259449780069CA8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA692AF0259449780069CA8B /* Main.storyboard */; };
@@ -43,7 +42,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA12331925973EB600C5933E /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		DA692AE7259449780069CA8B /* Storemator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storemator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA692AEA259449780069CA8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA692AEC259449780069CA8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 			children = (
 				DA692B1A259496C50069CA8B /* UIView.swift */,
 				DA692B1E2594A2DB0069CA8B /* String.swift */,
-				DA12331925973EB600C5933E /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,7 +358,6 @@
 				DA9DECF425965DDB002C28A7 /* GamePopularHeaderView.swift in Sources */,
 				DA9DECFD25967F4B002C28A7 /* GameLinksHeaderView.swift in Sources */,
 				DA692B212594A76D0069CA8B /* TodayAnimationTransition.swift in Sources */,
-				DA12331A25973EB600C5933E /* UIViewController.swift in Sources */,
 				DA9DECEE2595F7B2002C28A7 /* GameFeaturedCollectionViewCell.swift in Sources */,
 				DA9DECEA2595F728002C28A7 /* GameFeaturedTableViewCell.swift in Sources */,
 				DA9DECE82595F699002C28A7 /* GamePopular.swift in Sources */,
