@@ -65,6 +65,6 @@ class TodayDetailView: UIScrollView {
         detailTextView.anchorView(top: self.containerView.bottomAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topPadding: 30, leftPadding: 20, bottomPadding: 0, rightPadding: 20, width: getCurrentWindow().bounds.size.width - 40, height: detailTextView.text.calculateHeightWith(width: getCurrentWindow().bounds.size.width - 40, font: UIFont.boldSystemFont(ofSize: 17)))
         
         
-        self.contentSize = CGSize(width: getCurrentWindow().bounds.width, height: containerView.frame.height + 40 + detailTextView.frame.height + 50)
+        self.contentSize = CGSize(width: getCurrentWindow().bounds.width, height: containerView.frame.height + 30 + detailTextView.frame.height + 10)
     }
 }

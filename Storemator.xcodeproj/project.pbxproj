@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DA12331D2597ACEC00C5933E /* DetailNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12331C2597ACEC00C5933E /* DetailNavigationView.swift */; };
 		DA12331F2597B7D200C5933E /* DetailTopFactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12331E2597B7D200C5933E /* DetailTopFactsCell.swift */; };
+		DA15B0F6259903CC00E2321E /* UpdateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA15B0F5259903CC00E2321E /* UpdateDataModel.swift */; };
+		DA15B0F82599057200E2321E /* UpdatesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA15B0F72599057200E2321E /* UpdatesViewCell.swift */; };
 		DA218DA52597DF61003184E6 /* DetailNewFeatureViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA218DA42597DF61003184E6 /* DetailNewFeatureViewCell.swift */; };
 		DA692AEB259449780069CA8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA692AEA259449780069CA8B /* AppDelegate.swift */; };
 		DA692AED259449780069CA8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA692AEC259449780069CA8B /* SceneDelegate.swift */; };
@@ -56,6 +58,8 @@
 /* Begin PBXFileReference section */
 		DA12331C2597ACEC00C5933E /* DetailNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigationView.swift; sourceTree = "<group>"; };
 		DA12331E2597B7D200C5933E /* DetailTopFactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTopFactsCell.swift; sourceTree = "<group>"; };
+		DA15B0F5259903CC00E2321E /* UpdateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDataModel.swift; sourceTree = "<group>"; };
+		DA15B0F72599057200E2321E /* UpdatesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesViewCell.swift; sourceTree = "<group>"; };
 		DA218DA42597DF61003184E6 /* DetailNewFeatureViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNewFeatureViewCell.swift; sourceTree = "<group>"; };
 		DA692AE7259449780069CA8B /* Storemator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storemator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA692AEA259449780069CA8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,30 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		DA15B0F22599039800E2321E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA692B0825944C3E0069CA8B /* UpdatesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DA15B0F3259903AC00E2321E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA15B0F5259903CC00E2321E /* UpdateDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA15B0F4259903B500E2321E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA15B0F72599057200E2321E /* UpdatesViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DA692ADE259449780069CA8B = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +221,9 @@
 		DA692B0725944C2B0069CA8B /* Updates */ = {
 			isa = PBXGroup;
 			children = (
-				DA692B0825944C3E0069CA8B /* UpdatesViewController.swift */,
+				DA15B0F4259903B500E2321E /* View */,
+				DA15B0F3259903AC00E2321E /* Model */,
+				DA15B0F22599039800E2321E /* Controller */,
 			);
 			path = Updates;
 			sourceTree = "<group>";
@@ -441,9 +471,11 @@
 				DA692B18259493590069CA8B /* TodayHeaderView.swift in Sources */,
 				DACE119C259504F60066ADB4 /* TodayDetailViewController.swift in Sources */,
 				DA692B0625944C0B0069CA8B /* GamesViewController.swift in Sources */,
+				DA15B0F82599057200E2321E /* UpdatesViewCell.swift in Sources */,
 				DA12331D2597ACEC00C5933E /* DetailNavigationView.swift in Sources */,
 				DA218DA52597DF61003184E6 /* DetailNewFeatureViewCell.swift in Sources */,
 				DA9DECFA25966697002C28A7 /* GamePopularCollectionViewCell.swift in Sources */,
+				DA15B0F6259903CC00E2321E /* UpdateDataModel.swift in Sources */,
 				DA692B0925944C3E0069CA8B /* UpdatesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
