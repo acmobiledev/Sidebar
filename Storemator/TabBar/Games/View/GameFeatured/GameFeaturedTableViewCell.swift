@@ -12,6 +12,8 @@ let reUseCellFeaturedIdentifier = "GameFeaturedTVCell"
 
 class GameFeaturedTableViewCell: UITableViewCell {
     
+    var detailClosure: (()->())?
+    
     fileprivate let featuredGames: [GameFeatured] = [GameFeatured(appName: "Rolling Sky", featuredText: "MAJOR UPDATE", categoryName: "CARD", coverImageName: "cover_1"), GameFeatured(appName: "Clash Royale", featuredText: "NEW GAME", categoryName: "Strategy", coverImageName: "cover_2"), GameFeatured(appName: "Fast & Furious", featuredText: "REDISCOVER THIS", categoryName: "Racing", coverImageName: "cover_3")]
     
     lazy var gameFeaturedCollectionView: GameFeaturedCollectionView = {
@@ -64,6 +66,8 @@ extension GameFeaturedTableViewCell: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Bring GameDetailVC")
+        detailClosure!()
     }
+    
+    
 }

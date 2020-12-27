@@ -15,6 +15,8 @@ fileprivate let popularGames: [GamePopular] = [GamePopular(appName: "Bullet Hell
 
 class GamePopularTableViewCell: UITableViewCell {
     
+    var bringDetailGames: (() -> Void)?
+    
     let popularCellHeaderView: GamePopularHeaderView = {
         let headerView = GamePopularHeaderView(frame: .zero)
         return headerView
@@ -75,6 +77,6 @@ extension GamePopularTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("AAAAAAAA")
+        bringDetailGames!()
     }
 }

@@ -78,9 +78,15 @@ extension GamesViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: reuseCellIdentifier1, for: indexPath) as! GameFeaturedTableViewCell
+            cell.detailClosure = {
+                self.pushToDetailController()
+            }
             return cell
         } else if indexPath.section == 1 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: reuseCellIdentifier2, for: indexPath) as! GamePopularTableViewCell
+            cell.bringDetailGames = {()
+                self.pushToDetailController()
+            }
             return cell
         } else if indexPath.section == 2 {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: reuseCellIdentifier3, for: indexPath) as! GameLinkTableViewCell
@@ -91,7 +97,8 @@ extension GamesViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let gameDetailVC = GameDetailViewController()
+        self.navigationController?.pushViewController(gameDetailVC, animated: true)
     }
 }
 
@@ -103,6 +110,7 @@ extension GamesViewController {
     }
     
     func addIconButtonOnGameNavigationBar() {
+        self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.prefersLargeTitles = true
          self.navigationController?.navigationBar.topItem?.title = "Game"
         guard let navController = self.navigationController else { return }
@@ -127,4 +135,8 @@ extension GamesViewController {
     @objc func presentUserTableViewController() {
         print("User Pofile")
     }
+    
+    private func pushToDetailController() {
+           navigationController?.pushViewController(GameDetailViewController(), animated: true)
+       }
 }
