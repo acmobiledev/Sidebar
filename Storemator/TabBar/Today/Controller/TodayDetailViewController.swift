@@ -12,8 +12,7 @@ import UIKit
 class TodayDetailViewController: UIViewController, UIScrollViewDelegate {
     
     lazy var todayDetailView: TodayDetailView = {
-        let frame = self.view.bounds
-        let detailView = TodayDetailView(frame: frame)
+        let detailView = TodayDetailView(frame: .zero)
         detailView.delegate = self
         return detailView
     }()
@@ -45,6 +44,8 @@ class TodayDetailViewController: UIViewController, UIScrollViewDelegate {
     
     func constructUIComponents() {
         self.view.addSubview(todayDetailView)
+        todayDetailView.anchorView(top: self.view.topAnchor, left: self.view.leftAnchor, bottom: self.view.bottomAnchor, right: self.view.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: 0, height: 0)
+        
         self.view.addSubview(self.closeButton)
         closeButton.anchorView(top: self.view.topAnchor, left: nil, bottom: nil, right: self.view.rightAnchor, topPadding: 25, leftPadding: 0, bottomPadding: 0, rightPadding: 15, width: 50, height: 50)
     }
