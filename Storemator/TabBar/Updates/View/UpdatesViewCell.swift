@@ -12,8 +12,45 @@ fileprivate var imageViewTopPadding: CGFloat = 0
 
 class UpdatesViewCell: UITableViewCell {
     
+    var cellState = CellState.init(rawValue: 0)
+    
+    var moreButtonClosure: ((UpdatesViewCell) -> Void)?
+    
+    var isFirstCell: Bool = false {
+        didSet {
+            self.topLeftLabel.isHidden = !isFirstCell
+            self.updateAllButton.isHidden = !isFirstCell
+            imageViewTopPadding = isFirstCell ? 48 : 18
+            self.constructSubviews()
+        }
+        
+    }
+    
+    var updatedModel: UpdateDataModel? {
+        didSet {
+            guard let safeModel = self.updatedModel , let safeCellState = self.cellState else {return}
+            self.iconImageView.image = UIImage(named: safeModel.iconImageString)
+            self.appNameLabel.text = safeModel.appName
+            self.dateLabel.text = safeModel.timeStamp
+            self.contentLabel.text = safeModel.contentDesc
+            self.versionAndSizeLabel.text = "Version " + safeModel.versionNumber + " . " + String(safeModel.appSize) + " MB"
+            
+            if safeCellState.rawValue == 0 {
+                self.versionAndSizeLabel.isHidden = true
+                self.showMoreButton.isHidden = false
+            } else {
+                self.versionAndSizeLabel.isHidden = false
+                self.showMoreButton.isHidden = true
+            }
+            self.constructSubviews()
+        }
+    }
+    
+    
+    
     let topLine: UIView = {
         let aView = UIView(frame: .zero)
+        aView.backgroundColor = .lightGray
         return aView
     }()
     
@@ -81,7 +118,7 @@ class UpdatesViewCell: UITableViewCell {
         return aLabel
     }()
     
-    let showMoreButton: UIButton = {
+    lazy var showMoreButton: UIButton = {
         let aButton = UIButton(type: .system)
         aButton.setTitle("More", for: UIControl.State.normal)
         aButton.setTitleColor(.systemBlue, for: UIControl.State.normal)
@@ -89,39 +126,6 @@ class UpdatesViewCell: UITableViewCell {
         aButton.addTarget(self, action: #selector(moreButtonPressed), for: UIControl.Event.touchUpInside)
         return aButton
     }()
-    
-    
-    var cellState = CellState.init(rawValue: 0)
-    
-    var moreButtonClosure: ((UpdatesViewCell) -> Void)?
-    
-    var isFirstCell: Bool = false {
-        didSet {
-            self.topLeftLabel.isHidden = !isFirstCell
-            self.updateAllButton.isHidden = !isFirstCell
-            imageViewTopPadding = isFirstCell ? 48 : 18
-        }
-    }
-    
-    var updatedModel: UpdateDataModel? {
-        didSet {
-            guard let safeModel = self.updatedModel , let safeCellState = self.cellState else {return}
-            self.iconImageView.image = UIImage(named: safeModel.iconImageString)
-            self.appNameLabel.text = safeModel.appName
-            self.dateLabel.text = safeModel.timeStamp
-            self.contentLabel.text = safeModel.contentDesc
-            self.versionAndSizeLabel.text = "Version " + safeModel.versionNumber + " . " + String(safeModel.appSize) + " MB"
-            
-            if safeCellState.rawValue == 0 {
-                self.versionAndSizeLabel.isHidden = true
-                self.showMoreButton.isHidden = false
-            } else {
-                self.versionAndSizeLabel.isHidden = false
-                self.showMoreButton.isHidden = true
-            }
-            
-        }
-    }
     
     
     
@@ -134,15 +138,21 @@ class UpdatesViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    func constructSubviews() {
+        //        super.layoutSubviews()
         
         self.addSubview(topLine)
         topLine.anchorView(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: self.rightAnchor, topPadding: 1, leftPadding: 20, bottomPadding: 0, rightPadding: 20, width: 0, height: 0.5)
         
         self.addSubview(iconImageView)
-        iconImageView.anchorView(top: topLine.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, topPadding: imageViewTopPadding, leftPadding: 20, bottomPadding: 0, rightPadding: 0, width: 62, height: 62)
-        iconImageView.layer.cornerRadius = 14
+        
+        if self.isFirstCell {
+            iconImageView.anchorView(top: topLine.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, topPadding: 48, leftPadding: 20, bottomPadding: 0, rightPadding: 0, width: 62, height: 62)
+            iconImageView.layer.cornerRadius = 14
+        } else {
+            iconImageView.anchorView(top: topLine.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, topPadding: 18, leftPadding: 20, bottomPadding: 0, rightPadding: 0, width: 62, height: 62)
+            iconImageView.layer.cornerRadius = 14
+        }
         
         self.addSubview(appNameLabel)
         appNameLabel.anchorView(top: iconImageView.topAnchor, left: iconImageView.rightAnchor, bottom: nil, right: nil, topPadding: 13, leftPadding: 12, bottomPadding: 0, rightPadding: 0, width: 0, height: 0)
@@ -178,7 +188,7 @@ class UpdatesViewCell: UITableViewCell {
 //MARK: - Helper
 extension UpdatesViewCell {
     @objc func moreButtonPressed() {
-        self.moreButtonClosure!(self)
+        moreButtonClosure!(self)
         // this method will expand in cellforrowatindex
         // this method will collapse in didSelectForRowAtIndex
     }
