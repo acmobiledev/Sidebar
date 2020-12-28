@@ -90,7 +90,7 @@ class UpdatesViewCell: UITableViewCell {
         let aLabel = UILabel()
         aLabel.font = .systemFont(ofSize: 15)
         aLabel.textColor = .black
-        aLabel.numberOfLines = 0
+        aLabel.numberOfLines = 1
         return aLabel
     }()
     
@@ -175,7 +175,7 @@ class UpdatesViewCell: UITableViewCell {
         updateAllButton.centerYAnchor.constraint(equalTo: topLeftLabel.centerYAnchor).isActive = true
         
         self.addSubview(versionAndSizeLabel)
-        versionAndSizeLabel.anchorView(top: contentLabel.bottomAnchor, left: self.leftAnchor, bottom: nil, right: nil, topPadding: 4, leftPadding: 20, bottomPadding: 0, rightPadding: 0, width: 0, height: 0)
+        versionAndSizeLabel.anchorView(top: self.contentLabel.bottomAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: nil, topPadding: 10, leftPadding: 20, bottomPadding: 10, rightPadding: 0, width: 0, height: 0)
         
         self.addSubview(showMoreButton)
         showMoreButton.anchorView(top: nil, left: contentLabel.rightAnchor, bottom: nil, right: self.rightAnchor, topPadding: 0, leftPadding: 2, bottomPadding: 0, rightPadding: 15, width: 46, height: 30)
@@ -189,7 +189,5 @@ class UpdatesViewCell: UITableViewCell {
 extension UpdatesViewCell {
     @objc func moreButtonPressed() {
         moreButtonClosure!(self)
-        // this method will expand in cellforrowatindex
-        // this method will collapse in didSelectForRowAtIndex
     }
 }
