@@ -11,6 +11,8 @@ import UIKit
 
 class TodayHeaderView: UIView {
     
+    var userAccountDisclosure: (() -> Void)?
+    
     let dateLabel: UILabel = {
         let aLabel = UILabel()
         aLabel.text = "SATURDAY, DECEMBER 25"
@@ -59,5 +61,6 @@ class TodayHeaderView: UIView {
 extension TodayHeaderView {
     @objc func userButtonTapped() {
        print("User Button Tapped")
+        self.userAccountDisclosure!()
     }
 }

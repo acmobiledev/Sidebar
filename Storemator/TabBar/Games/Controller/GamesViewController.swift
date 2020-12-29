@@ -18,7 +18,7 @@ class GamesViewController: UITableViewController {
     
     var isHidden = false
     
-    let gameNavUserButton: UIButton = {
+    lazy var gameNavUserButton: UIButton = {
         let btn = UIButton()
         btn.setImage(#imageLiteral(resourceName: "demo_icon"), for: .normal)
         btn.setImage(#imageLiteral(resourceName: "demo_icon"), for: .highlighted)
@@ -39,12 +39,11 @@ class GamesViewController: UITableViewController {
         
         self.addIconButtonOnGameNavigationBar()
         self.adjustGameNavigationAppearance()
-//        self.setNavigationBarBottomLineHidden(true)
+       
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        print("RRRRRRRRRRRRRRR-----\(getCurrentWindow().bounds.size.width)")
     }
 }
 
@@ -112,20 +111,20 @@ extension GamesViewController {
     func addIconButtonOnGameNavigationBar() {
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.prefersLargeTitles = true
-         self.navigationController?.navigationBar.topItem?.title = "Game"
+        self.navigationController?.navigationBar.topItem?.title = "Game"
         guard let navController = self.navigationController else { return }
         
         navController.navigationBar.addSubview(self.gameNavUserButton)
         self.gameNavUserButton.anchorView(top: nil, left: nil, bottom: navController.navigationBar.bottomAnchor, right: navController.navigationBar.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 10, rightPadding: 10, width: 38, height: 38)
-       }
+    }
     
     func adjustGameNavigationAppearance() {
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.configureWithOpaqueBackground()
-            navBarAppearance.backgroundColor = .white
-            navBarAppearance.shadowColor = nil
-            navigationController?.navigationBar.standardAppearance = navBarAppearance
-            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = .white
+        navBarAppearance.shadowColor = nil
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
 }
 
@@ -133,10 +132,12 @@ extension GamesViewController {
 //MARK: - Helper Method
 extension GamesViewController {
     @objc func presentUserTableViewController() {
-        print("User Pofile")
+        let accountVC = AccountViewController()
+        let navigationController = UINavigationController(rootViewController: accountVC)
+        self.present(navigationController, animated: true, completion: nil)
     }
     
     private func pushToDetailController() {
-           navigationController?.pushViewController(GameDetailViewController(), animated: true)
-       }
+        navigationController?.pushViewController(GameDetailViewController(), animated: true)
+    }
 }

@@ -13,6 +13,9 @@
 		DA15B0F82599057200E2321E /* UpdatesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA15B0F72599057200E2321E /* UpdatesViewCell.swift */; };
 		DA19A1DB259B304B00D8D039 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19A1DA259B304B00D8D039 /* SearchViewCell.swift */; };
 		DA19A1DD259B306600D8D039 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19A1DC259B306600D8D039 /* SearchModel.swift */; };
+		DA19A1E0259B985900D8D039 /* TableKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19A1DF259B985900D8D039 /* TableKeys.swift */; };
+		DA19A1E2259BAB0900D8D039 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19A1E1259BAB0900D8D039 /* AccountViewController.swift */; };
+		DA19A1E4259BACB400D8D039 /* AccountViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19A1E3259BACB400D8D039 /* AccountViewCell.swift */; };
 		DA218DA52597DF61003184E6 /* DetailNewFeatureViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA218DA42597DF61003184E6 /* DetailNewFeatureViewCell.swift */; };
 		DA692AEB259449780069CA8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA692AEA259449780069CA8B /* AppDelegate.swift */; };
 		DA692AED259449780069CA8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA692AEC259449780069CA8B /* SceneDelegate.swift */; };
@@ -64,6 +67,9 @@
 		DA15B0F72599057200E2321E /* UpdatesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesViewCell.swift; sourceTree = "<group>"; };
 		DA19A1DA259B304B00D8D039 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		DA19A1DC259B306600D8D039 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		DA19A1DF259B985900D8D039 /* TableKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableKeys.swift; sourceTree = "<group>"; };
+		DA19A1E1259BAB0900D8D039 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		DA19A1E3259BACB400D8D039 /* AccountViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewCell.swift; sourceTree = "<group>"; };
 		DA218DA42597DF61003184E6 /* DetailNewFeatureViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNewFeatureViewCell.swift; sourceTree = "<group>"; };
 		DA692AE7259449780069CA8B /* Storemator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storemator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA692AEA259449780069CA8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +188,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		DA19A1DE259B97A200D8D039 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				DA692AEC259449780069CA8B /* SceneDelegate.swift */,
+				DA692AEA259449780069CA8B /* AppDelegate.swift */,
+				DA19A1E1259BAB0900D8D039 /* AccountViewController.swift */,
+				DA19A1E3259BACB400D8D039 /* AccountViewCell.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		DA692ADE259449780069CA8B = {
 			isa = PBXGroup;
 			children = (
@@ -201,11 +218,10 @@
 		DA692AE9259449780069CA8B /* Storemator */ = {
 			isa = PBXGroup;
 			children = (
+				DA19A1DE259B97A200D8D039 /* Others */,
 				DA692B19259496930069CA8B /* Extensions */,
 				DA692B1225947D900069CA8B /* Utils */,
 				DA692AFE259449C10069CA8B /* TabBar */,
-				DA692AEA259449780069CA8B /* AppDelegate.swift */,
-				DA692AEC259449780069CA8B /* SceneDelegate.swift */,
 				DA692AF0259449780069CA8B /* Main.storyboard */,
 				DA692AF3259449810069CA8B /* Assets.xcassets */,
 				DA692AF5259449810069CA8B /* LaunchScreen.storyboard */,
@@ -299,6 +315,7 @@
 				DA692B1325947DA20069CA8B /* GlobalConstants.swift */,
 				DA692B1525947F880069CA8B /* GlobalFunctions.swift */,
 				DA9E6A6E25987504001045F3 /* CommonCollectionViewFlowLayout.swift */,
+				DA19A1DF259B985900D8D039 /* TableKeys.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -488,6 +505,7 @@
 				DA9DECEA2595F728002C28A7 /* GameFeaturedTableViewCell.swift in Sources */,
 				DA9DECE82595F699002C28A7 /* GamePopular.swift in Sources */,
 				DA692AED259449780069CA8B /* SceneDelegate.swift in Sources */,
+				DA19A1E4259BACB400D8D039 /* AccountViewCell.swift in Sources */,
 				DA9DED0125967FC7002C28A7 /* GameLinkTableView.swift in Sources */,
 				DA9DECEC2595F791002C28A7 /* GameFeaturedCollectionView.swift in Sources */,
 				DA9E6A7425987E21001045F3 /* InformationTableView.swift in Sources */,
@@ -495,6 +513,7 @@
 				DA9DECE62595F630002C28A7 /* GameFeatured.swift in Sources */,
 				DA19A1DB259B304B00D8D039 /* SearchViewCell.swift in Sources */,
 				DA9DECF625966540002C28A7 /* GamePopularTableViewCell.swift in Sources */,
+				DA19A1E2259BAB0900D8D039 /* AccountViewController.swift in Sources */,
 				DA9E6A6925987215001045F3 /* DetailReviewCollectionView.swift in Sources */,
 				DA9E6A6D25987274001045F3 /* CommonSectionHeaderView.swift in Sources */,
 				DA692B00259449E80069CA8B /* MainTabViewController.swift in Sources */,
@@ -506,6 +525,7 @@
 				DA15B0F82599057200E2321E /* UpdatesViewCell.swift in Sources */,
 				DA12331D2597ACEC00C5933E /* DetailNavigationView.swift in Sources */,
 				DA218DA52597DF61003184E6 /* DetailNewFeatureViewCell.swift in Sources */,
+				DA19A1E0259B985900D8D039 /* TableKeys.swift in Sources */,
 				DA9DECFA25966697002C28A7 /* GamePopularCollectionViewCell.swift in Sources */,
 				DA15B0F6259903CC00E2321E /* UpdateDataModel.swift in Sources */,
 				DA692B0925944C3E0069CA8B /* UpdatesViewController.swift in Sources */,

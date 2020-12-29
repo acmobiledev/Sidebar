@@ -14,21 +14,15 @@ fileprivate let reUseIdentifier = "TodayCell"
 class TodayViewController: UITableViewController {
     
     var selectedCell: TodayViewCell?
-    var statusBarShouldBeHidden = false
-    
-    //computed get-only property
-    override var prefersStatusBarHidden: Bool {
-        return statusBarShouldBeHidden
-    }
-    
-    //computed get-only property
-    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
-        return .slide
-    }
     
     lazy var headerView: TodayHeaderView = {
         let frame = CGRect(x: 0, y: 0, width: getCurrentWindow().bounds.size.width, height: 100)
         let aView = TodayHeaderView(frame: frame)
+        aView.userAccountDisclosure = {
+            let accountVC = AccountViewController()
+            let navigationController = UINavigationController(rootViewController: accountVC)
+            self.present(navigationController, animated: true, completion: nil)
+        }
         return aView
     }()
     
@@ -39,13 +33,6 @@ class TodayViewController: UITableViewController {
         self.tableView.register(TodayViewCell.self, forCellReuseIdentifier: reUseIdentifier)
         self.tableView.separatorStyle = .none
         self.tableView.rowHeight = 440
-    }
-    
-    func updateStatusbarAndTabbarFrame(visible: Bool) {
-        self.statusBarShouldBeHidden = !visible
-        UIView.animate(withDuration: 0.25) {
-            self.setNeedsStatusBarAppearanceUpdate()
-        }
     }
 }
 
