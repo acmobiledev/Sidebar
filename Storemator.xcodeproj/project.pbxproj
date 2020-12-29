@@ -11,6 +11,8 @@
 		DA12331F2597B7D200C5933E /* DetailTopFactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12331E2597B7D200C5933E /* DetailTopFactsCell.swift */; };
 		DA15B0F6259903CC00E2321E /* UpdateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA15B0F5259903CC00E2321E /* UpdateDataModel.swift */; };
 		DA15B0F82599057200E2321E /* UpdatesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA15B0F72599057200E2321E /* UpdatesViewCell.swift */; };
+		DA19A1DB259B304B00D8D039 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19A1DA259B304B00D8D039 /* SearchViewCell.swift */; };
+		DA19A1DD259B306600D8D039 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19A1DC259B306600D8D039 /* SearchModel.swift */; };
 		DA218DA52597DF61003184E6 /* DetailNewFeatureViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA218DA42597DF61003184E6 /* DetailNewFeatureViewCell.swift */; };
 		DA692AEB259449780069CA8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA692AEA259449780069CA8B /* AppDelegate.swift */; };
 		DA692AED259449780069CA8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA692AEC259449780069CA8B /* SceneDelegate.swift */; };
@@ -60,6 +62,8 @@
 		DA12331E2597B7D200C5933E /* DetailTopFactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTopFactsCell.swift; sourceTree = "<group>"; };
 		DA15B0F5259903CC00E2321E /* UpdateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDataModel.swift; sourceTree = "<group>"; };
 		DA15B0F72599057200E2321E /* UpdatesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesViewCell.swift; sourceTree = "<group>"; };
+		DA19A1DA259B304B00D8D039 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
+		DA19A1DC259B306600D8D039 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		DA218DA42597DF61003184E6 /* DetailNewFeatureViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNewFeatureViewCell.swift; sourceTree = "<group>"; };
 		DA692AE7259449780069CA8B /* Storemator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storemator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA692AEA259449780069CA8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +158,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		DA19A1D7259B301400D8D039 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA692B0B25944C750069CA8B /* SearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DA19A1D8259B302B00D8D039 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA19A1DC259B306600D8D039 /* SearchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA19A1D9259B303300D8D039 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA19A1DA259B304B00D8D039 /* SearchViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DA692ADE259449780069CA8B = {
 			isa = PBXGroup;
 			children = (
@@ -231,7 +259,9 @@
 		DA692B0A25944C5C0069CA8B /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				DA692B0B25944C750069CA8B /* SearchViewController.swift */,
+				DA19A1D9259B303300D8D039 /* View */,
+				DA19A1D8259B302B00D8D039 /* Model */,
+				DA19A1D7259B301400D8D039 /* Controller */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -437,6 +467,7 @@
 				DA9E6A67259871E0001045F3 /* DetailReviewTableViewCell.swift in Sources */,
 				DA692B0325944BA30069CA8B /* TodayViewController.swift in Sources */,
 				DA9E6A7625987E38001045F3 /* InformationTableViewCell.swift in Sources */,
+				DA19A1DD259B306600D8D039 /* SearchModel.swift in Sources */,
 				DA692B1425947DA20069CA8B /* GlobalConstants.swift in Sources */,
 				DA692B0C25944C750069CA8B /* SearchViewController.swift in Sources */,
 				DA692B1625947F880069CA8B /* GlobalFunctions.swift in Sources */,
@@ -462,6 +493,7 @@
 				DA9E6A7425987E21001045F3 /* InformationTableView.swift in Sources */,
 				DA9E6A6F25987504001045F3 /* CommonCollectionViewFlowLayout.swift in Sources */,
 				DA9DECE62595F630002C28A7 /* GameFeatured.swift in Sources */,
+				DA19A1DB259B304B00D8D039 /* SearchViewCell.swift in Sources */,
 				DA9DECF625966540002C28A7 /* GamePopularTableViewCell.swift in Sources */,
 				DA9E6A6925987215001045F3 /* DetailReviewCollectionView.swift in Sources */,
 				DA9E6A6D25987274001045F3 /* CommonSectionHeaderView.swift in Sources */,
