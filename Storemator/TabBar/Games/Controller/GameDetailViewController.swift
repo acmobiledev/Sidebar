@@ -57,7 +57,7 @@ class GameDetailViewController: UIViewController {
         topImageView.anchorView(top: self.view.topAnchor, left: self.detailTableView.leftAnchor, bottom: nil, right: self.detailTableView.rightAnchor, topPadding: -20, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: 0, height: 220)
         
         self.view.addSubview(self.navigationView)
-        navigationView.anchorView(top: self.view.topAnchor, left: self.view.leftAnchor, bottom: nil, right: self.view.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: 0, height: 45)
+        navigationView.anchorView(top: self.view.topAnchor, left: self.view.leftAnchor, bottom: nil, right: self.view.rightAnchor, topPadding: 0, leftPadding: 0, bottomPadding: 0, rightPadding: 0, width: 0, height: 80)
     }
     
     
