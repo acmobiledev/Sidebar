@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: scene as! UIWindowScene)
         self.window = window
-        window.rootViewController = MainTabViewController()
+        window.rootViewController = SplitViewController()
         window.makeKeyAndVisible()
     }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0FF7E726AA371C00B70DD6 /* TabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0FF7E626AA371C00B70DD6 /* TabsViewModel.swift */; };
+		DA0FF7EB26AA374400B70DD6 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0FF7EA26AA374400B70DD6 /* SplitViewController.swift */; };
+		DA0FF7EE26AA376700B70DD6 /* SideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0FF7ED26AA376700B70DD6 /* SideBarViewController.swift */; };
 		DA12331D2597ACEC00C5933E /* DetailNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12331C2597ACEC00C5933E /* DetailNavigationView.swift */; };
 		DA12331F2597B7D200C5933E /* DetailTopFactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA12331E2597B7D200C5933E /* DetailTopFactsCell.swift */; };
 		DA15B0F6259903CC00E2321E /* UpdateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA15B0F5259903CC00E2321E /* UpdateDataModel.swift */; };
@@ -61,6 +64,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA0FF7E626AA371C00B70DD6 /* TabsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewModel.swift; sourceTree = "<group>"; };
+		DA0FF7EA26AA374400B70DD6 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		DA0FF7ED26AA376700B70DD6 /* SideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarViewController.swift; sourceTree = "<group>"; };
 		DA12331C2597ACEC00C5933E /* DetailNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigationView.swift; sourceTree = "<group>"; };
 		DA12331E2597B7D200C5933E /* DetailTopFactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTopFactsCell.swift; sourceTree = "<group>"; };
 		DA15B0F5259903CC00E2321E /* UpdateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDataModel.swift; sourceTree = "<group>"; };
@@ -127,6 +133,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA0FF7E526AA36E400B70DD6 /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				DA0FF7E626AA371C00B70DD6 /* TabsViewModel.swift */,
+				DA0FF7EA26AA374400B70DD6 /* SplitViewController.swift */,
+				DA0FF7ED26AA376700B70DD6 /* SideBarViewController.swift */,
+			);
+			path = Sidebar;
+			sourceTree = "<group>";
+		};
 		DA12331B2597ACC700C5933E /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +234,7 @@
 		DA692AE9259449780069CA8B /* Storemator */ = {
 			isa = PBXGroup;
 			children = (
+				DA0FF7E526AA36E400B70DD6 /* Sidebar */,
 				DA19A1DE259B97A200D8D039 /* Others */,
 				DA692B19259496930069CA8B /* Extensions */,
 				DA692B1225947D900069CA8B /* Utils */,
@@ -497,11 +514,13 @@
 				DA692B1125947BA40069CA8B /* TodayViewCell.swift in Sources */,
 				DA9DECFF25967FA2002C28A7 /* GameLinkTableViewCell.swift in Sources */,
 				DA9E6A7225987E01001045F3 /* DetailInformationTableViewCell.swift in Sources */,
+				DA0FF7E726AA371C00B70DD6 /* TabsViewModel.swift in Sources */,
 				DA692AEB259449780069CA8B /* AppDelegate.swift in Sources */,
 				DA9DECF425965DDB002C28A7 /* GamePopularHeaderView.swift in Sources */,
 				DA9DECFD25967F4B002C28A7 /* GameLinksHeaderView.swift in Sources */,
 				DA692B212594A76D0069CA8B /* TodayAnimationTransition.swift in Sources */,
 				DA9DECEE2595F7B2002C28A7 /* GameFeaturedCollectionViewCell.swift in Sources */,
+				DA0FF7EE26AA376700B70DD6 /* SideBarViewController.swift in Sources */,
 				DA9DECEA2595F728002C28A7 /* GameFeaturedTableViewCell.swift in Sources */,
 				DA9DECE82595F699002C28A7 /* GamePopular.swift in Sources */,
 				DA692AED259449780069CA8B /* SceneDelegate.swift in Sources */,
@@ -515,6 +534,7 @@
 				DA9DECF625966540002C28A7 /* GamePopularTableViewCell.swift in Sources */,
 				DA19A1E2259BAB0900D8D039 /* AccountViewController.swift in Sources */,
 				DA9E6A6925987215001045F3 /* DetailReviewCollectionView.swift in Sources */,
+				DA0FF7EB26AA374400B70DD6 /* SplitViewController.swift in Sources */,
 				DA9E6A6D25987274001045F3 /* CommonSectionHeaderView.swift in Sources */,
 				DA692B00259449E80069CA8B /* MainTabViewController.swift in Sources */,
 				DA9E6A78259883EE001045F3 /* GameDetailViewController.swift in Sources */,
@@ -675,6 +695,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y8AYV8D5R;
 				INFOPLIST_FILE = Storemator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -693,6 +714,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y8AYV8D5R;
 				INFOPLIST_FILE = Storemator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

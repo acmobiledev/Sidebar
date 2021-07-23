@@ -35,5 +35,13 @@ class MainTabViewController: UITabBarController, UITabBarControllerDelegate {
         navigationController.tabBarItem.image = unSelectedImage
         return navigationController
     }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        guard let splitViewController = self.splitViewController as? SplitViewController else {
+            return
+        }
+        
+        splitViewController.tab = item.tag
+    }
 
 }
